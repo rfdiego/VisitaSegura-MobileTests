@@ -272,7 +272,7 @@ select.form-control option, textarea.form-control { background: #ffffff; color: 
     left: 0;
     right: 0;
     z-index: 9999;
-    background: rgba(37, 99, 235, 0.85);
+    background: rgba(220, 38, 38, 0.85);
     color: #ffffff;
     text-align: center;
     font-family: var(--font-sans);
