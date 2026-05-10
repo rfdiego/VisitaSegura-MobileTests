@@ -22,13 +22,49 @@ const app = {
 
     init() {
         this.loadData();
+        this.initTheme();
         this.showScreen('splash');
-        
+
         // Auto avança do splash após 2.5s
         setTimeout(() => {
             this.showScreen('role');
         }, 2500);
     },
+
+    // ─── Theme management ──────────────────────────────────────
+
+    _themeLabels: {
+        original: 'Original 🌙',
+        claro:    'Claro ☀️',
+        escuro:   'Escuro 🌑',
+        verde:    'Verde 🌿',
+        roxo:     'Roxo 💜'
+    },
+
+    initTheme() {
+        const saved = localStorage.getItem('vsTheme') || 'original';
+        this._applyTheme(saved, false);
+    },
+
+    setTheme(name) {
+        this._applyTheme(name, true);
+    },
+
+    _applyTheme(name, showFeedback) {
+        document.documentElement.setAttribute('data-theme', name);
+        localStorage.setItem('vsTheme', name);
+
+        document.querySelectorAll('.theme-swatch').forEach(s => {
+            s.classList.toggle('active', s.dataset.theme === name);
+        });
+
+        const versionEl = document.getElementById('version-text');
+        if (versionEl) versionEl.textContent = `v1.2.0 — ${this._themeLabels[name] || name}`;
+
+        if (showFeedback) this.showToast(`Tema ${this._themeLabels[name] || name} aplicado`);
+    },
+
+    // ───────────────────────────────────────────────────────────
 
     loadData() {
         const DATA_VERSION = '7';
