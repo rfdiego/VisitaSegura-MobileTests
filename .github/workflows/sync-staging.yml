@@ -1,4 +1,4 @@
-name: Sync Claude → staging
+name: Sync Claude → main
 
 on:
   push:
@@ -23,5 +23,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Force push to staging
-        run: git push origin HEAD:staging --force
+      - name: Force push to main
+        run: git push origin HEAD:main --force
