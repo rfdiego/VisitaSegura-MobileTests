@@ -9,9 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/themes.css">
 </head>
 <body>
     <div id="app">
+        <!-- Faixa de Homologação -->
+        <div class="homolog-banner">HOMOLOGAÇÃO</div>
         <!-- Splash Screen -->
         <div id="splash-screen" class="screen active">
             <div class="splash-content">
@@ -65,8 +68,18 @@
                         <i class="fas fa-headset"></i> Fale Conosco
                     </a>
                 </div>
+                <div class="theme-picker">
+                    <span class="theme-picker-label"><i class="fas fa-palette"></i> Tema</span>
+                    <div class="theme-swatches">
+                        <button class="theme-swatch" data-theme="original" onclick="app.setTheme('original')" title="Original"></button>
+                        <button class="theme-swatch" data-theme="claro" onclick="app.setTheme('claro')" title="Claro"></button>
+                        <button class="theme-swatch" data-theme="escuro" onclick="app.setTheme('escuro')" title="Escuro"></button>
+                        <button class="theme-swatch" data-theme="verde" onclick="app.setTheme('verde')" title="Verde"></button>
+                        <button class="theme-swatch" data-theme="roxo" onclick="app.setTheme('roxo')" title="Roxo"></button>
+                    </div>
+                </div>
                 <p>Sistema oficial do CRECISP</p>
-                <small>v1.0.0 - Protótipo</small>
+                <small id="version-text">v1.2.0</small>
             </div>
         </div>
 
@@ -114,6 +127,16 @@
                     </div>
                 </div>
                 <div class="user-menu-items">
+                    <div class="user-menu-theme">
+                        <span class="user-menu-theme-label"><i class="fas fa-palette"></i> Tema</span>
+                        <div class="theme-swatches theme-swatches-sm">
+                            <button class="theme-swatch" data-theme="original" onclick="app.setTheme('original')" title="Original"></button>
+                            <button class="theme-swatch" data-theme="claro" onclick="app.setTheme('claro')" title="Claro"></button>
+                            <button class="theme-swatch" data-theme="escuro" onclick="app.setTheme('escuro')" title="Escuro"></button>
+                            <button class="theme-swatch" data-theme="verde" onclick="app.setTheme('verde')" title="Verde"></button>
+                            <button class="theme-swatch" data-theme="roxo" onclick="app.setTheme('roxo')" title="Roxo"></button>
+                        </div>
+                    </div>
                     <button onclick="app.logout()">
                         <i class="fas fa-right-from-bracket"></i>
                         Sair da conta
