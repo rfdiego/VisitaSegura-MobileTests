@@ -34,11 +34,9 @@ const app = {
     // ─── Theme management ──────────────────────────────────────
 
     _themeLabels: {
-        original: 'Original 🌙',
-        claro:    'Claro ☀️',
-        escuro:   'Escuro 🌑',
-        verde:    'Verde 🌿',
-        roxo:     'Roxo 💜'
+        original:    'Original 🌙',
+        claro:       'Claro ☀️',
+        rocketseat:  'Rocketseat 🚀'
     },
 
     initTheme() {
